@@ -1,0 +1,24 @@
+
+.Name{
+    margin: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color:green;
+}
+.background{
+    margin: -8px;
+    background-color: orange;
+}
+.header-content1{
+    display: flex;
+}
+.nav-login{
+    display:flex;
+    justify-content: flex-end;
+
+
+}
+a{
+    text-decoration: none;
+}
