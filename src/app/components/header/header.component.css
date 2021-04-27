@@ -2,8 +2,7 @@
 .Name{
     margin: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 48px;
     color:green;
 }
 .green{
@@ -13,7 +12,7 @@
     color:white;
 }
 .background{
-    margin: -8px;
+    
     background-color: orange;
     
 }
