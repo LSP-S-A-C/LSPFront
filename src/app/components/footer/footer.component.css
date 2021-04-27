@@ -1,0 +1,14 @@
+.background{
+    
+    background-color: orange;
+}
+.Empresa{
+    padding: 14px;
+    font-size: 36px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.green{
+    color: green;
+}
