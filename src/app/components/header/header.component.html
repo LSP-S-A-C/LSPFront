@@ -1,16 +1,13 @@
 <header class="head">
     <div class="background">
-
+        <div class="img">
+            <img [src]="'assets/piggybank.png'" width="90"  alt="image">
+        </div>
         <div class="header-content1">
-
-            <a class="Name" href="#">LifeStylePlanner</a>
-
-            <nav class="nav-login">
-                <p class="white">¿Ya tienes cuenta?</p>
-                &nbsp;
-                <a (click)="onClick()" class="green"> <b>Haz click aqui</b> </a>
-            </nav>
-            
+            <a (click)="onClick()" class="Name">LifeStylePlanner</a>
+        </div>
+        <div class="msg">
+            <span>COMIENZA TU NUEVA VIDA FINANCIERA JUNTO CON NOSOTROS</span>
         </div>
     </div>
 </header>

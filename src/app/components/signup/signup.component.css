@@ -73,3 +73,14 @@
    
 
 }
+.nav-login{
+    display: flex;
+    margin: auto;
+    margin-top: 13px;
+}
+a{
+    text-decoration: none;
+}
+.white{
+    color: #FEFEE2;
+}

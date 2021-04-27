@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,8 +9,10 @@ import { FormControl} from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   name = new FormControl('');
-  constructor() { }
-
+  constructor(private readonly router: Router) { }
+  onClick(){
+    this.router.navigate(['/login']);
+  }
   ngOnInit(): void {
   }
 

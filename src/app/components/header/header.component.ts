@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private readonly router: Router) { }
   onClick(){
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signup']);
   }
   ngOnInit(): void {
   }
