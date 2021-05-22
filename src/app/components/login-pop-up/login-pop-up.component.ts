@@ -5,27 +5,25 @@ import { SessionContainer } from 'src/app/models/session';
 
 import { AuthService } from './../../services/auth.service';
 import { StorageService} from './../../services/storage.service';
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-pop-up',
+  templateUrl: './login-pop-up.component.html',
+  styleUrls: ['./login-pop-up.component.css']
 })
-export class LoginComponent implements OnInit {
-
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, 
-    private router: Router, private storageService: StorageService) { }
-  
+export class LoginPopUpComponent implements OnInit {
   public error: string = null;
   public loginForm: FormGroup;
   public submitted: Boolean = false;
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, 
+    private router: Router, private storageService: StorageService) { }
+
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
-  onSubmit(): void {
+  onSubmit(): void{
     this.error = null;
     if (this.loginForm.valid){
       let email: string = this.loginForm.value.email;
@@ -41,7 +39,6 @@ export class LoginComponent implements OnInit {
     else {
       this.error = "Debe ingresar sus credenciales"
     }
-  
   }
   private correctLogin(data: SessionContainer) {
     this.error = null;
