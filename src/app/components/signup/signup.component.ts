@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserSignup } from '../../models/user.model';
-import { SessionContainer} from './../../models/session';
+import { SessionContainer} from './../../models/session.model';
 import { StorageService } from './../../services/storage.service';
 @Component({
   selector: 'app-signup',
