@@ -1,13 +1,17 @@
 <header class="head">
-    <div class="background">
-        <div class="img">
+    <div class="background green">
+        <div class="img" *ngIf="getRouter().url !== '/signup' && getRouter().url !== '/login' ">
             <img [src]="'assets/piggybank.png'" width="90"  alt="image">
         </div>
         <div class="header-content1">
             <a (click)="onClick()" class="Name">LifeStylePlanner</a>
         </div>
-        <div class="msg">
+        <div class="msg" *ngIf="getRouter().url === '/signup' || getRouter().url === '/login'">
             <span>COMIENZA TU NUEVA VIDA FINANCIERA JUNTO CON NOSOTROS</span>
+        </div>
+        <div class="msg2" *ngIf="getRouter().url !== '/signup' && getRouter().url !== '/login' " >
+             {{getUser().name }}
+             <span (click)="logout()"> cerrar sesion  </span>  
         </div>
     </div>
 </header>

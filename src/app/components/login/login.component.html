@@ -2,12 +2,18 @@
     <div class="msg">
         <span>Llena tus datos</span>
     </div>
-    <div class="my-form">
-        <input class="inp" placeholder="Usuario">
-        <input class="inp" type="password" placeholder="password">
-        <div class="cont-button">
-            <button class="button-login">Ingresar</button>
-        </div>
+    <div *ngIf="error">
+        {{error}}
     </div>
+    
+    <form class="my-form" (ngSubmit) = "onSubmit()"
+    #lForm = "ngForm" [formGroup] = "loginForm" novalidate>
+
+        <input type="email" formControlName="email" class="inp" placeholder="email">
+        <input type="password" formControlName="password" class="inp" placeholder="password">
+        <div class="cont-button">
+            <button type="submit" class="button-login">Ingresar</button>
+        </div>
+    </form>
 
 </div>

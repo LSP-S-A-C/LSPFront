@@ -1,5 +1,5 @@
 <section class="page-signup background">
-    <div class="pet">
+    <div class="pet" >
         <img [src]="'assets/piggybank.png'" width="340"  alt="image">
     </div>
     <div class="container">
@@ -11,24 +11,23 @@
                 <span>Solo te tomará unos segundos</span>
             </div>
             
-            <div class="my-form">
-                <label for="name">
-                    <input class="sign-input" placeholder="Usuario" type="name" [formControl]="name">
-                </label>
-        
-                <label for="email">
-                    <input class="sign-input" type="email" placeholder="Correo electronico" type="email" [formControl]="">
-                </label>
-        
-                <label for="celular">
-                    <input class="sign-input" type="number" placeholder="Celular" type="celular" [formControl]="">
-                </label>
-        
-                <label for="contraseña">
-                    <input class="sign-input" type="password"  placeholder="Contraseña" type="contraseña" [formControl]="">
-                </label>
+            <form class="my-form" (ngSubmit) = "onSubmit()"
+            #lForm="ngForm" [formGroup]="subForm" novalidate>
+       
+                <input class="sign-input" type="name" placeholder="Nombre de Usuario"  formControlName="name">
+                <input class="sign-input" type="email" placeholder="Correo electronico"  formControlName="email">
+                <input class="sign-input" type="password"  placeholder="Contraseña"  formControlName="pass">
+                <input class="sign-input" type="text" placeholder="Celular"  formControlName="phone">
+                
+                <select class="sign-input" type="text" placeholder="EMPLOYED/UNEMPLOYED" formControlName="EmploymentStatus">
+                    <option value="EMPLOYED">EMPLOYED</option>
+                    <option value="UNEMPLOYED">UNEMPLOYED</option>
+                </select>
+               
                 <div class="container-button">
-                    <button class="signup-button">REGISTRATE GRATIS</button>
+                    <button type="submit" class="signup-button">REGISTRATE GRATIS</button>
+                    <div *ngIf="error"> {{error}} </div>
+                    <div *ngIf="msg" > {{msg}} </div>
                 </div>
 
                 <nav class="nav-login">
@@ -36,9 +35,10 @@
                     &nbsp;
                     <a (click)="onClick()" class="white"> <b>Haz click aqui</b> </a>
                 </nav>
+                <app-login-pop-up *ngIf="showLogin"></app-login-pop-up>
+
     
-    
-            </div>
+            </form>
             
     
         </div>
