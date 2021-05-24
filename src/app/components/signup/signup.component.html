@@ -1,6 +1,15 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+ 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
 <section class="page-signup background">
     <div class="pet" >
-        <img [src]="'assets/piggybank.png'" width="340"  alt="image">
+        <img [src]="'assets/piggybank.png'" width="393"  alt="image">
     </div>
     <div class="container">
         <div class="my-signup">
@@ -19,7 +28,7 @@
                 <input class="sign-input" type="password"  placeholder="Contraseña"  formControlName="pass">
                 <input class="sign-input" type="text" placeholder="Celular"  formControlName="phone">
                 
-                <select class="sign-input" type="text" placeholder="EMPLOYED/UNEMPLOYED" formControlName="EmploymentStatus">
+                <select class="sign-input" type="text" placeholder="EMPLOYED/UNEMPLOYED" formControlName="EmploymentStatus" style="background-color: rgb(255, 219, 164);">
                     <option value="EMPLOYED">EMPLOYED</option>
                     <option value="UNEMPLOYED">UNEMPLOYED</option>
                 </select>
@@ -55,15 +64,24 @@
 
 <div class="beneficios">
 
+    <div class="ImgBen">
+        <img [src]="'assets/RegGrat.png'" height="100"  alt="image">
+    </div>
     <div class="green">
         <span>Registro gratuito sin suscripción</span>
     </div>
 
+    <div class="ImgBen">
+        <img [src]="'assets/MonBen.png'" height="100"  alt="image">
+    </div>
     <div class="green">
         <span>Contamos con 3 tipos de moneda</span>
     </div>
 
-    <div class="green">
+    <div class="ImgBen">
+        <img [src]="'assets/MasBen.png'" height="100"  alt="image">
+    </div>
+    <div class="green2">
         <span>Hojas de ahorro personalizables</span>
     </div>
 

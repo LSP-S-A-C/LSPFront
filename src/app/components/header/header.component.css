@@ -1,9 +1,10 @@
 
 .Name{
-    margin: 10px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 48px;
-    color:green;
+    margin: -10%;
+    font-family: 'Anton';
+    font-size: 390%;
+    margin-left: 15%;
+    color:#2c6e49;
 }
 .green{
     color:green;
@@ -21,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 90px;
+    height: 110px;
 }
 .nav-login{
     display: flex;
