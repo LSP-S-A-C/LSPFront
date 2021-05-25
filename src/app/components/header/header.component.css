@@ -7,14 +7,14 @@
     color:#2c6e49;
 }
 .green{
-    color:green;
+    color:#4C956C;
 }
 .white{
     color:white;
 }
 .background{
     display: flex;
-    background-color: orange;
+    background-color: #D68C45;
     
     
 }
@@ -35,14 +35,14 @@ a{
 .msg{
     font-size: 28px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
+    color: #FEFEE3;
     margin: auto;
     margin-right: 80px;
     
 }
 .msg2{
     font-size: 16px;
-    color: white;
+    color: #FEFEE3;
     margin: auto;
     margin-right: 80px;
     
