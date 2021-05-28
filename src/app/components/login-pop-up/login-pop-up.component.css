@@ -17,6 +17,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+#cerrar{
+    position: absolute;
+    right: 3px; 
+}
 .msg{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
