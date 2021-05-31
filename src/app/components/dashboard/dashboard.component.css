@@ -2,6 +2,7 @@
     color:#4c956c;
     font-family: 'Anton';
     font-size:46px;
+    letter-spacing: 3px;
 }
 .dashboard{
     margin-bottom: 3%;
@@ -57,7 +58,8 @@
 .container1{
     margin-right: 3%;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    margin-left: 2%;
 }
 
 .container2{
