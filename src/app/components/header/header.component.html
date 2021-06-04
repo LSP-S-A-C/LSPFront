@@ -18,7 +18,9 @@
         </div>
         <div class="msg2" *ngIf="getRouter().url !== '/signup' && getRouter().url !== '/login' " >
             <div style="margin-right: 5%;">
-            {{getUser().name }}
+               <a (click)="openMisDatos()">
+                   {{getUser().name }}
+               </a>
             </div>
              <span (click)="logout()"> Cerrar Sesión  </span>  
         </div>

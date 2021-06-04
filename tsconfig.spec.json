@@ -14,5 +14,5 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+, "src/app/components/mis-datos/mis-datos.component.ts"  ]
 }

@@ -25,4 +25,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.storageService.logout();
   }
+  openMisDatos() {
+    this.router.navigate(['/mis-datos']);
+    //console.log("aaaa");
+  }
 }
