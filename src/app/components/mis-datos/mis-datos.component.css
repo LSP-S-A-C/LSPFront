@@ -8,6 +8,9 @@
     margin-bottom: 3%;
 }
 .ana-cate{
+    position: absolute;
+    right: 38px;
+    top: 198px;
     font-family: 'Oswald';
     text-align: center;
     font-size: 23px;
@@ -39,12 +42,13 @@
 }
 
 .container3{
+    margin-top: 2%;
     margin-right: 2%;
     margin-left: 2%;
 }
 
 .widthTercio{
-    width: 33.3333333333%;
+    width: 20%;
 }
 .text-center{
     text-align: center;
@@ -56,4 +60,39 @@
     font-family: 'Oswald';
     font-size: 30px;
     background-color: #d68c45;
+}
+.text_label{
+    width: 33.3%;
+    position: relative;
+    text-align: center;
+    font-family: 'Open Sans Condensed';
+    font-size: 25px;
+}
+.text_box {
+    position: relative;
+    width: 20%;
+    height: 60px;
+    background-color: #d68b457c;
+    font-family: 'Open Sans Condensed';
+    font-weight: 600;
+    font-size: 23px;
+    text-align: center;
+}
+.texts {
+    position: relative;
+    top: 25%;
+    font-family: 'Open Sans Condensed';
+    font-weight: 600;
+    font-size: 23px;
+    text-align: center;
+}
+.button_default{
+    position: relative;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 23px;
+    height: 41px;
+    width: 192px;
+    background-color: #FFC9B9;
+    cursor: pointer;
 }

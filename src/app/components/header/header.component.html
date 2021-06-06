@@ -11,18 +11,18 @@
             <img [src]="'assets/piggybank.png'" width="90"  alt="image">
         </div>
         <div class="header-content1">
-            <a (click)="onClick()" class="Name">LifeStylePlanner</a>
+            <a style="cursor: pointer" (click)="onClick()" class="Name">LifeStylePlanner</a>
         </div>
         <div class="msg" *ngIf="getRouter().url === '/signup' || getRouter().url === '/login'">
             <span>COMIENZA TU NUEVA VIDA FINANCIERA JUNTO CON NOSOTROS</span>
         </div>
         <div class="msg2" *ngIf="getRouter().url !== '/signup' && getRouter().url !== '/login' " >
             <div style="margin-right: 5%;">
-               <a (click)="openMisDatos()">
+               <a style="cursor: pointer" (click)="openMisDatos()">
                    {{getUser().name }}
                </a>
             </div>
-             <span (click)="logout()"> Cerrar Sesión  </span>  
+             <span style="cursor: pointer" (click)="logout()"> Cerrar Sesión  </span>  
         </div>
     </div>
 </header>
