@@ -16,30 +16,6 @@
     margin: auto;
     background-color: #FFC9B9;
 }
-.pink-button{
-    font-family: 'Oswald';
-    text-align: center;
-    font-size: 23px;
-    height: 41px;
-    width: 300px;
-    margin: auto;
-    background-color: #FFC9B9;
-}
-.yellow-button{
-    font-family: 'Oswald';
-    text-align: center;
-    font-size: 23px;
-    height: 57px;
-    width: 364px;
-    background-color: #ffe7b9;
-}
-.dinero{
-    font-size: 34px;
-    font-family: 'Oswald';
-}
-.b-left{
-    justify-self: right;
-}
 .space{
     display: flex;
     justify-content: space-between;
@@ -62,7 +38,22 @@
     margin-left: 2%;
 }
 
-.container2{
-    margin-right: 4%;
-    margin-left: 4%;
+.container3{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.widthTercio{
+    width: 33.3333333333%;
+}
+.text-center{
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 30px;
+    background-color: #d68c45;
+}
+.text-box{
+    font-family: 'Oswald';
+    font-size: 30px;
+    background-color: #d68c45;
 }
