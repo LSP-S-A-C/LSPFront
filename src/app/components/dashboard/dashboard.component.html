@@ -20,15 +20,16 @@
                     <span class="text1 cent-vert">Balance General: </span>
                 </div>
                 <div class="cent-vert">
-                    <span class="cent-vert dinero">S/ 542.75</span>
+                    <span class="cent-vert dinero" id="money">S/ 542.75</span>
                 </div>
                 <div class="cent-vert">
-                    <button style="height: 40px; width: 90px; font-family: 'Source Sans Pro';">Visible</button>
+                <a href="javascript:document.getElementById('money').style.display='none';void0"><img [src]="'assets/icons8-invisible-64.png'" width="30" alt="30"></a>
+                <a href="javascript:document.getElementById('money').style.display='block';void0"><img [src]="'assets/icons8-eye-64.png'" width="30" alt="30"></a>
                 </div>
             </div>
             <div>
                 <button class="pink-button" (click)="openSavingPlan()">METAS DE AHORRO</button>
-            </div>
+            </div>  
         </div>
         <div class="container2">
             <div class="space cent-vert">
