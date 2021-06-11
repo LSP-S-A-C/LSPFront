@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import User from 'src/app/models/user.model';
 import {SavingPlan,SavingPlanContainer} from 'src/app/models/saving-plan';
-import {StorageService} from './../../services/storage.service';
-import {SavingPlanService} from './../../services/saving-plan.service';
+import {StorageService} from '../../services/storage.service';
+import {SavingPlanService} from '../../services/saving-plan.service';
 import { Router } from "@angular/router";
 @Component({
-  selector: 'app-saving-plan',
-  templateUrl: './saving-plan.component.html',
-  styleUrls: ['./saving-plan.component.css']
+  selector: 'app-saving-goals',
+  templateUrl: './saving-goals.component.html',
+  styleUrls: ['./saving-goals.component.css']
 })
-export class SavingPlanComponent implements OnInit {
+export class SavingGoalsComponent implements OnInit {
   user: User  
   savingPlans: SavingPlan[]
   error: string = ""
@@ -31,10 +31,6 @@ export class SavingPlanComponent implements OnInit {
   }
   logout() {
     this.storageService.logout();
-  }
-
-  openSavingGoals(){
-    this.router.navigate(['/saving-goals']);
   }
 
 }
