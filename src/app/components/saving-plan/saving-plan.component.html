@@ -1,9 +1,18 @@
 <div class="saving-plan">
-    <div *ngFor="let sp of savingPlans; let i = index">
-        Plan de ahorro numero: {{ i+1 }}
-        Moneda: {{sp.currency}}
-        Salario: {{sp.salary}}
-    </div>
+    <table>
+        <thead>
+            <td><b>Moneda</b></td>
+            <td><b>Dinero Actual</b></td>
+            <td><b>Dinero Ahorrado</b></td>
+            <td><b>Porcentaje Ahorrado</b></td>
+            <td><b>Metas de Ahorro</b></td>
+        </thead>
+        <tr *ngFor="let sp of savingPlans; let i = index">
+            <td>{{sp.currency}}</td>
+            <td>{{sp.currentMoney}}</td>
+            <td>{{sp.currentSaves}}</td>
+            <td>{{sp.savesPercent}}</td>
+    </table>
     
     <div>
         <button class="pink-button" (click)="openSavingGoals()">METAS DE AHORRO</button>
