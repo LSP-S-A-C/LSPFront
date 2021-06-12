@@ -32,9 +32,6 @@ export class SavingGoalsComponent implements OnInit {
   logout() {
     this.storageService.logout();
   }
-  onClick(){
-    this.router.navigate(['/goal']);
-  }
 
 }
 /*
