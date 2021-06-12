@@ -13,6 +13,7 @@
     width: 192px;
     margin: auto;
     background-color: #FFC9B9;
+    cursor: pointer;
    
 }
 .resumen{
@@ -23,5 +24,9 @@
     width: 192px;
     margin: auto;
     background-color: #FFC9B9;
+    cursor: pointer;
   
+}
+.goal-image{
+    cursor: pointer;
 }

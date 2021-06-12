@@ -7,6 +7,8 @@ import { SavingGoalsComponent } from './components/saving-goals/saving-goals.com
 import { SignupComponent } from './components/signup/signup.component';
 import { MisDatosComponent } from './components/mis-datos/mis-datos.component';
 import { AuthorizationGuard } from './guards/AuthorizationGuard';
+import{GoalComponent} from './components/saving-goals-add-pop-up/goal.component';
+import{GoalInfoComponent} from './components/goal-info/goal-info.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signup', pathMatch: 'full' },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard]},
   { path: 'saving-plan', component: SavingPlanComponent, canActivate: [AuthorizationGuard]},
   { path: 'saving-goals', component: SavingGoalsComponent, canActivate: [AuthorizationGuard]},
-  { path: 'mis-datos', component: MisDatosComponent, canActivate: [AuthorizationGuard]}
+  { path: 'mis-datos', component: MisDatosComponent, canActivate: [AuthorizationGuard]},
+  { path:'add-goal', component:GoalComponent,canActivate:[AuthorizationGuard] },
+  { path:'goal-info', component:GoalInfoComponent,canActivate:[AuthorizationGuard] }
 ];
 
 @NgModule({
