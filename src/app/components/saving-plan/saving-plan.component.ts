@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./saving-plan.component.css']
 })
 export class SavingPlanComponent implements OnInit {
-  user: User  
+  user: User
   savingPlans: SavingPlan[]
   error: string = ""
   constructor(private storageService: StorageService,

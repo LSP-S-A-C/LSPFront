@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backend_url: "http://lsp-user-api.herokuapp.com/api/v1/swagger-ui.html#/"
+  backend_url: "https://lsp-backend.herokuapp.com/api/v1/"
 };
 
 /*

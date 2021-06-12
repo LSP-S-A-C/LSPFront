@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backend_url: "http://lsp-user-api.herokuapp.com/api/v1/swagger-ui.html#/"
+  backend_url: "lsp-backend.herokuapp.com/api/v1"
 };
