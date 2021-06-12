@@ -66,3 +66,31 @@
     margin-right: 4%;
     margin-left: 4%;
 }
+.caja{
+    background-color: rgb(27, 134, 27);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.my-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.inp{
+    margin: 10px;
+    padding: 10px;
+}
+.cont-button{
+    margin-top: 10px;   
+}
+.button-login{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
+    background-color: #FEC9B9;
+}

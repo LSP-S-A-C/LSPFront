@@ -13,9 +13,10 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class DashboardComponent implements OnInit {
   user: User
-  savingPlans: SavingPlans
+  savingPlans: SavingPlans[]
   public subForm: FormGroup
   error: string = ""
+  public msg: string = null;
   constructor(private storageService: StorageService, private formBuilder: FormBuilder, private router: Router, private savingPlanService: SavingPlanService) { }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class DashboardComponent implements OnInit {
 
   onSubmit(): void {
     this.error = null;
+    this.msg = null
     
     if(this.subForm.valid){
       let currency: string = this.subForm.value.currency;
@@ -41,13 +43,16 @@ export class DashboardComponent implements OnInit {
 
       this.savingPlanService.saves(currency, currentMoney, currentSaves, savesPercent).subscribe(
         data => {
-          this.savingPlans = new SavingPlans(currency, savesPercent, currentSaves, savesPercent)
+          //this.savingPlans = new SavingPlans(currency, savesPercent, currentSaves, savesPercent)
+          this.savingPlans=data.body
           console.log(this.savingPlans)
         },
         error => {
           this.error = error.error.message
         }
       )
+    }else{
+      this.error="Debe completar todos los datos"
     }
   }
   logout(){

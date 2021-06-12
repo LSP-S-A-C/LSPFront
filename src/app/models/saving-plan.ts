@@ -12,10 +12,11 @@ export class SavingPlan {
 export class SavingPlanContainer {
     public ok: string;
     public message: string;
-    public body: SavingPlan[];
+    public body: SavingPlans[];
 }
 
 export class SavingPlans {
+
     currency: string;
     currentMoney: number;
     currentSaves: number;

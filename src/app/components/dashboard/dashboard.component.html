@@ -40,22 +40,23 @@
                     <button class="ana-cate" style="margin-top: 21px;">AÑADIR CATEGORÍA</button>
                 </div>
             </div>
-            <table>
+            <div class="caja">
                 <form class="my-form" (ngSubmit) = "onSubmit()" #lForm="ngForm" [formGroup] = "subForm" novalidate>
                     
                 <input class="sign-input" type="currency" placeholder="Moneda"  formControlName="currency">
                 <input class="sign-input" type="currentMoney" placeholder="Dinero Actual"  formControlName="currentMoney">
                 <input class="sign-input" type="currentSaves"  placeholder="Dinero Ahorrado"  formControlName="currentSaves">
-                <input class="sign-input" type="savesPercent" placeholder="Porcentaje Ahorrado"  formControlName="savesPercent">
+                <input class="sign-input" type="savesPercent" placeholder="Porcentaje A Ahorrar"  formControlName="savesPercent">
 
                 <div class="container-button">
                     <button type="submit" class="signup-button">GUARDAR</button>
                     <div *ngIf="error"> {{error}} </div>
+                    <div *ngIf="msg" > {{msg}} </div>
                 </div>
 
                 </form>
     
-            </table>
+            </div>
             <div>
                 <button class="pink-button">AÑADIR TRANSACCIÓN</button>
             </div>
