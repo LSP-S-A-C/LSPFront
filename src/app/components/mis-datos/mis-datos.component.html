@@ -37,9 +37,9 @@
                 <div class=text_label>Email</div>
             </div>
             <div class="space linea2">
-                <div class="text_box" style="left: 110px;"><div class="texts">Diana</div></div>
+                <div class="text_box" style="left: 110px;"><div class="texts">{{getUser().name}}</div></div>
                 <div class="text_box"><div class="texts">Martinez</div></div>
-                <div class="text_box" style="right: 110px;"><div class="texts">diamartinez98@email.com</div></div>
+                <div class="text_box" style="right: 110px;"><div class="texts">{{getUser().email}}</div></div>
             </div>
             <br style="height: 2%;">
             <div class="space linea3">
@@ -48,8 +48,8 @@
                 <div class=text_label></div>
             </div>
             <div class="space linea4">
-                <div class="text_box"style="left: 110px;;"><div class="texts">+01 234 567 890</div></div>
-                <div class="text_box"><div class="texts">Desempleado</div></div>
+                <div class="text_box"style="left: 110px;;"><div class="texts">{{getUser().phone}}</div></div>
+                <div class="text_box"><div class="texts">{{getUser().employmentStatus}}</div></div>
                 <div class="widthTercio"></div>
             </div>
             <div class="last_space" style="float: right;">

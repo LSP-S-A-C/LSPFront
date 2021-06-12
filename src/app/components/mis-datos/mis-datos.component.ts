@@ -18,4 +18,7 @@ export class MisDatosComponent implements OnInit {
   logout(){
     this.storageService.logout();
   }
+  getUser(): any {
+    return this.user;
+  }
 }
