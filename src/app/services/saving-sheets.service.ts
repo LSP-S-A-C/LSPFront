@@ -17,3 +17,4 @@ export class SavingSheetsService {
     return this.http.post<SavingSheetsContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
      currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
   }
+}
