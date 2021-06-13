@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Injectable({
     providedIn: 'root'
   })
-export class goalStorage {
+export class goalStorageService {
    private currentGoal: Info = null; 
    private localGoalStorage;
 
