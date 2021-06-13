@@ -13,7 +13,9 @@
     font-size:25px;
 }
 .button_default{
-    position: relative;
+    position: absolute;
+    right: 10px;
+    top:195px;
     font-family: 'Oswald';
     text-align: center;
     font-size: 23px;

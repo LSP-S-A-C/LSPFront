@@ -12,6 +12,8 @@ export class GoalInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-  
+  Back(){
+    this.router.navigate(['/saving-goals']);
+    //console.log("aaaaaaaaaa");
+  }
 }
