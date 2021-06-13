@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import User from 'src/app/models/user.model';
 import { StorageService} from './../../services/storage.service';
-import {SavingPlan,SavingPlanContainer, SavingPlans} from 'src/app/models/saving-plan';
+import {SavingPlanContainer, SavingPlans} from 'src/app/models/saving-plan';
 import { Router } from '@angular/router';
 import {SavingPlanService} from './../../services/saving-plan.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import {Info} from 'src/app/models/goal-info.model'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  showAddTransaction: boolean = false;
   user: User
   savingPlans: SavingPlans[]
   public subForm: FormGroup
@@ -29,6 +31,11 @@ export class DashboardComponent implements OnInit {
       savesPercent: ['', Validators.required]
     })
   }
+  
+  onClick(){
+    this.showAddTransaction = !this.showAddTransaction;
+    console.log(this.showAddTransaction);
+  }
 
   onSubmit(): void {
     this.error = null;
@@ -39,11 +46,13 @@ export class DashboardComponent implements OnInit {
       let currentMoney: number = this.subForm.value.currentMoney;
       let currentSaves: number = this.subForm.value.currentSaves;
       let savesPercent: number = this.subForm.value.savesPercent;
+      let userId: number = 4;
+      let savesgoals: [];
 
+      console.log(currency);
 
-      this.savingPlanService.saves(currency, currentMoney, currentSaves, savesPercent).subscribe(
+      this.savingPlanService.saves(currency, currentMoney, currentSaves, savesPercent, userId, savesgoals).subscribe(
         data => {
-          //this.savingPlans = new SavingPlans(currency, savesPercent, currentSaves, savesPercent)
           this.savingPlans=data.body
           console.log(this.savingPlans)
         },
@@ -60,6 +69,12 @@ export class DashboardComponent implements OnInit {
   }
   openSavingPlan() {
     this.router.navigate(['/saving-plan']);
+  }
+  openAddTransaction() {
+    this.router.navigate(['/add-transaction']);
+  }
+  openDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 
 }

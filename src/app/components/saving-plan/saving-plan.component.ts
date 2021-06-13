@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import User from 'src/app/models/user.model';
 import { SavingPlans } from 'src/app/models/saving-plan';
-import {SavingPlan,SavingPlanContainer} from 'src/app/models/saving-plan';
+import {SavingPlanContainer} from 'src/app/models/saving-plan';
 import {StorageService} from './../../services/storage.service';
 import {SavingPlanService} from './../../services/saving-plan.service';
 import { Router } from "@angular/router";
@@ -19,7 +19,7 @@ export class SavingPlanComponent implements OnInit {
     private router: Router,private savingPlanService: SavingPlanService) { }
 
   ngOnInit() {
-    this.plan = this.savingPlanService.getCurrentUser();
+    this.plan = this.savingPlanService.getCurrentPlan();
    
     this.savingPlanService.findAll().subscribe(
       data => {

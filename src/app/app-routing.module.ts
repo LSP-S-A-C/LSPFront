@@ -6,6 +6,7 @@ import { SavingPlanComponent } from './components/saving-plan/saving-plan.compon
 import { SavingGoalsComponent } from './components/saving-goals/saving-goals.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { MisDatosComponent } from './components/mis-datos/mis-datos.component';
+import { AddTransactionComponent} from './components/add-transaction/add-transaction.component';
 import { AuthorizationGuard } from './guards/AuthorizationGuard';
 import{GoalComponent} from './components/saving-goals-add-pop-up/goal.component';
 import{GoalInfoComponent} from './components/goal-info/goal-info.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthorizationGuard]},
+  { path: 'add-transaction', component:AddTransactionComponent,canActivate:[AuthorizationGuard] },
   { path: 'saving-plan', component: SavingPlanComponent, canActivate: [AuthorizationGuard]},
   { path: 'saving-goals', component: SavingGoalsComponent, canActivate: [AuthorizationGuard]},
   { path: 'mis-datos', component: MisDatosComponent, canActivate: [AuthorizationGuard]},

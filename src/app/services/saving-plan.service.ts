@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { SavingPlan, SavingPlanContainer, SavingPlans} from "../models/saving-plan";
+import { SavingPlanContainer, SavingPlans} from "../models/saving-plan";
+import { Info} from "../models/goal-info.model";
 import {SessionContainer  }from "../models/session.model"
 @Injectable({
   providedIn: 'root'
@@ -21,12 +22,13 @@ export class SavingPlanService {
    findAll(): Observable<SavingPlanContainer> {
      return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan")
    }
-  saves(currency: string, currentMoney: number, currentSaves: number, savesPercent: number):  Observable<SavingPlanContainer> {
-    return this.http.post<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney, currentSaves: currentSaves, savesPercent: savesPercent})
+  saves(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, userId: number, savesgoals: Info[]):  Observable<SavingPlanContainer> {
+    return this.http.post<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
+     currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
   }
 
 
-  getCurrentUser(): SavingPlans {
+  getCurrentPlan(): SavingPlans {
     var plan: SavingPlans = this.currentPlan;
     return plan;
   };

@@ -58,7 +58,10 @@
     
             </div>
             <div>
-                <button class="pink-button">AÑADIR TRANSACCIÓN</button>
+                <nav>
+                    <button (click)="onClick()" (click)= "openAddTransaction()" class="pink-button">AÑADIR TRANSACCIÓN</button>
+                </nav>
+                <app-add-transaction *ngIf="showAddTransaction"> aaa </app-add-transaction>
             </div>
             <div class="space">
                 <span></span><button class="yellow-button">RESUMEN DE GASTOS POR CATEGORIA</button>

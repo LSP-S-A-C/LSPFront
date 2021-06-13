@@ -1,13 +1,5 @@
 import { CurrencyPipe } from "@angular/common";
-
-export class SavingPlan {
-    currency: string;
-    currentAmount: number;
-    expectedSavingsRatio: number;
-
-    constructor() {
-    }
-}
+import {Info} from "./goal-info.model"
 
 export class SavingPlanContainer {
     public ok: string;
@@ -16,16 +8,19 @@ export class SavingPlanContainer {
 }
 
 export class SavingPlans {
-
+    id:number;
     currency: string;
     currentMoney: number;
     currentSaves: number;
     savesPercent: number;
+    savesgoals: Info[];
 
-    constructor(currency: string, currentMoney: number, currentSaves: number, savesPercent: number) {
+    constructor(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, savesgoals: Info[], id: number) {
         this.currency = currency;
         this.currentMoney = currentMoney;
         this.currentSaves = currentSaves;
         this.savesPercent = savesPercent;
+        this.id = id;
+        this.savesgoals = savesgoals;
     }
 }

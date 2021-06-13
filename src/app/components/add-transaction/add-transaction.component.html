@@ -1,0 +1,18 @@
+<div class="form-popup" id="myForm" style="display: block;">
+
+    <div action="/action_page.php" class="form-container">
+        <span class="msg">Llena tus datos</span>
+        
+        <div *ngIf="error">
+          {{error}}
+        </div>
+        
+        <!--<form class="my-form" (ngSubmit) = "onSubmit()"
+        #lForm = "ngForm" [formGroup] = "loginForm" novalidate>
+            <input class="inp" type="text" placeholder="Enter Email" name="email" formControlName="email">
+            <input class="inp" type="password" placeholder="Enter Password" name="psw" formControlName="password">
+            <button class="cont-button button-login"   type="submit" >Ingresar</button>
+        </form>-->
+    </div>
+    <div id="close"><a href="dashboard"><img [src]="'assets/icons8-macos-close-96.png'" width="30" alt="30"></a></div>
+</div>
