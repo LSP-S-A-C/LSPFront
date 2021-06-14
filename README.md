@@ -10,6 +10,8 @@ Es un aplicativo web que tiene como objetivo ayudar al usuario a alcanzar un est
 * Rebeca Liliana Bravo Navarro
 
 ## Arquitectura 🛠️
+![image](https://user-images.githubusercontent.com/63934328/121836937-1d16de80-cc9a-11eb-8c9f-104d34885cd2.png)
+![image](https://user-images.githubusercontent.com/63934328/121836963-2bfd9100-cc9a-11eb-9d8f-5e6ecdf571f8.png)
 
 
 ## Extras 🗒️
