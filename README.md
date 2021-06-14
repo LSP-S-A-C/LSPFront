@@ -5,12 +5,13 @@ Es un aplicativo web que tiene como objetivo ayudar al usuario a alcanzar un est
 ## Startup Profile 🧑‍💻
 * Adrián Gabriel Moscol Suarez
 * Daniel Arturo Carnero Flores
+* Elena Daniela Salcedo Salazar 
 * Hernán Aaron Razo Ballón
 * Luis Alonso Pineda Knox
 * Rebeca Liliana Bravo Navarro
 
 ## Arquitectura 🛠️
-![image](https://user-images.githubusercontent.com/63934328/121837042-4c2d5000-cc9a-11eb-81a2-fb37e82630ff.png)
+![image](https://user-images.githubusercontent.com/63934328/121837212-a6c6ac00-cc9a-11eb-9ea4-7865f7c415ef.png)
 ![image](https://user-images.githubusercontent.com/63934328/121837063-5a7b6c00-cc9a-11eb-9290-130d3ec20781.png)
 
 
