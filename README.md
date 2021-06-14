@@ -12,7 +12,7 @@ Es un aplicativo web que tiene como objetivo ayudar al usuario a alcanzar un est
 
 ## Arquitectura 🛠️
 ![image](https://user-images.githubusercontent.com/63934328/121837212-a6c6ac00-cc9a-11eb-9ea4-7865f7c415ef.png)
-![image](https://user-images.githubusercontent.com/35857164/121840118-31120e80-cca1-11eb-8c0e-06f654a612d1.png)
+![image](https://user-images.githubusercontent.com/35857164/121840170-5272fa80-cca1-11eb-971c-af2dcec1edf2.png)
 
 
 
