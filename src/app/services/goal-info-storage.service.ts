@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Info,GoalContainer} from "../models/goal-info.model";
 import { Router } from '@angular/router';
 
-@Injectable({
+/*@Injectable({
     providedIn: 'root'
   })
 export class goalStorageService {
@@ -18,7 +18,7 @@ export class goalStorageService {
     }
       
     //cuando no hay ninguna meta ni informacion de meta
-    getCurrentUser(): Info {
+    /*getCurrentUser(): Info {
         var goal: Info = this.currentGoal;
         return goal;
     };
@@ -33,6 +33,6 @@ export class goalStorageService {
     saveGoals(description: string, money: number):  Observable<Info> {
       return this.http.post<Info>("http://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals",{description:description,money:money })
     }
-}
+}*/
 
   

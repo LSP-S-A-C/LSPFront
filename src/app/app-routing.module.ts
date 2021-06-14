@@ -8,7 +8,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { MisDatosComponent } from './components/mis-datos/mis-datos.component';
 import { AddTransactionComponent} from './components/add-transaction/add-transaction.component';
 import { AuthorizationGuard } from './guards/AuthorizationGuard';
-import{GoalComponent} from './components/saving-goals-add-pop-up/goal.component';
+//import{GoalComponent} from './components/saving-goals-add-pop-up/goal.component';
 import{GoalInfoComponent} from './components/goal-info/goal-info.component';
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'saving-plan', component: SavingPlanComponent, canActivate: [AuthorizationGuard]},
   { path: 'saving-goals', component: SavingGoalsComponent, canActivate: [AuthorizationGuard]},
   { path: 'mis-datos', component: MisDatosComponent, canActivate: [AuthorizationGuard]},
-  { path:'add-goal', component:GoalComponent,canActivate:[AuthorizationGuard] },
+  //{ path:'add-goal', component:GoalComponent,canActivate:[AuthorizationGuard] },
   { path:'goal-info', component:GoalInfoComponent,canActivate:[AuthorizationGuard] }
 ];
 
