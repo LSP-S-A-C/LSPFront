@@ -7,6 +7,7 @@ import {SavingPlanService} from './../../services/saving-plan.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import {Info} from 'src/app/models/goal-info.model'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -39,14 +40,14 @@ export class DashboardComponent implements OnInit {
 
   onSubmit(): void {
     this.error = null;
-    this.msg = null
+    this.msg = null;
     
     if(this.subForm.valid){
       let currency: string = this.subForm.value.currency;
       let currentMoney: number = this.subForm.value.currentMoney;
       let currentSaves: number = this.subForm.value.currentSaves;
       let savesPercent: number = this.subForm.value.savesPercent;
-      let userId: number = 4;
+      let userId: number = this.user.id;
       let savesgoals: [];
 
       console.log(currency);

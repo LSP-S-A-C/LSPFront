@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +9,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SavingPlanComponent } from './components/saving-plan/saving-plan.component';
 // services
@@ -39,7 +38,6 @@ import { TestComponent } from './components/test/test.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
-    
   ],
   providers: [AuthService, StorageService, SavingPlanService, 
     AuthorizationGuard,

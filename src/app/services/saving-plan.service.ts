@@ -20,12 +20,12 @@ export class SavingPlanService {
     
   }
    findAll(): Observable<SavingPlanContainer> {
-     return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan")
+     return this.http.get<SavingPlanContainer>("http://localhost:8082/api/v1/savingplan")
    }
   saves(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, userId: number, savesgoals: Info[]):  Observable<SavingPlanContainer> {
-    return this.http.post<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
+    return this.http.post<SavingPlanContainer>("http://localhost:8082/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
      currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
-  }
+  } 
 
 
   getCurrentPlan(): SavingPlans {
