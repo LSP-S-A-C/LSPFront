@@ -18,13 +18,13 @@ export class AuthService {
   }
  
   login(email: string, password: string): Observable<SessionContainer> {
-    return this.http.post<SessionContainer>("http://localhost:8081/api/v1/users/login", {email: email, password: password})
+    return this.http.post<SessionContainer>("https://lsp-user-api.herokuapp.com/api/v1/users/login", {email: email, password: password})
 
     //return this.http.post<SessionContainer>("https://lsp-user-api.herokuapp.com/api/v1/users/login", {email: email, password: password})
   }
 
   create(email: string, employmentStatus: string, name: string, password: string, phone: string): Observable<SessionContainer> {
-    return this.http.post<SessionContainer>("http://localhost:8081/api/v1/users/signup", {email: email, employmentStatus: employmentStatus, name: name, password: password, phone: phone})
+    return this.http.post<SessionContainer>("https://lsp-user-api.herokuapp.com/api/v1/users/signup", {email: email, employmentStatus: employmentStatus, name: name, password: password, phone: phone})
     
     //return this.http.post<SessionContainer>("https://lsp-user-api.herokuapp.com/api/v1/users/signup", {email: email, employmentStatus: employmentStatus, name: name, password: password, phone: phone})
   }

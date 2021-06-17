@@ -1,27 +1,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-<div class="form-popup" id="myForm" style="display: block;">
-    <div class="add-goal">
-        <div>
-            <span class="title">AGREGAR META </span>
+<div class="container">
+    <form class="my-form" (ngSubmit)="onSubmit()"
+    #lForm="ngForm" [FormGroup]="subForm" novalidate>
+        <input class="goal-input" type="description" placeholder="Descripción" formControlName="description">
+        <input class="goal-input" type="money-goal" placeholder="Costo" formControlName="money-goal">
+        <div class="container-buton">
+            <button type="submit" class="AddGoal-button">AÑADIR</button>
+            <div *ngIf="error">{{error}}</div>
+            <div *ngIf="msg">{{msg}}</div>
         </div>
-        <div>
-            <span class="subtitle">Descripcion </span>
-            <input class="goal" type="description" placeholder=" "  formControlName="description">
-        </div>
-        <div>
-            <span class="subtitle">Monto </span>
-            <INPUT TYPE="NUMBER" MIN="0" MAX="1000" STEP="1" VALUE="0" SIZE="1">
-        </div>
-        <div>
-            <span class="subtitle">Imagen </span>
-            <form enctype="multipart/form-data" action="uploader.php" method="POST">
-                <input name="uploadedfile" type="file" />
-            </form>
-        </div>
-        <div class="last_space" style="float: right;">
-            <button class="button_default">AÑADIR</button>
-        </div>
-    </div>
     
-</div> 
+    </form>
+</div>
+
