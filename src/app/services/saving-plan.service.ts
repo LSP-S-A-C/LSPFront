@@ -20,18 +20,24 @@ export class SavingPlanService {
     
   }
    findAll(): Observable<SavingPlanContainer> {
-     return this.http.get<SavingPlanContainer>("https://lsp-user-api.herokuapp.com/api/v1/savingplan")
+     return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan")
    }
   saves(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, userId: number, savesgoals: Info[]):  Observable<SavingPlanContainer> {
-    return this.http.post<SavingPlanContainer>("https://lsp-user-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
+    return this.http.post<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
      currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
   } 
+  findbyID(id: number): Observable<SavingPlanContainer> {
+    return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan/user/"+ id.toString())
+  }
 
 
   getCurrentPlan(): SavingPlans {
     var plan: SavingPlans = this.currentPlan;
     return plan;
   };
+  /*getCurrentPlan(id:number): SavingPlans {
+    return this.findbyID(id);
+  };*/
   loadPlanData(): SavingPlans{
     var sessionStr = this.localSavingPlan.getItem('currentPlan');
     return (sessionStr) ? <SavingPlans> JSON.parse(sessionStr) : null;

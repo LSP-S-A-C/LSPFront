@@ -7,11 +7,11 @@
             <td><b>Porcentaje Ahorrado</b></td>
             <td><b>Metas de Ahorro</b></td>
         </thead>
-        <tr *ngFor="let sp of savingPlans; let i = index">
-            <td>{{getPlan.currency}}</td>
-            <td>{{getPlan.currentMoney}}</td>
-            <td>{{getPlan.currentSaves}}</td>
-            <td>{{getPlan.savesPercent}}</td>
+        <tr>
+            <td>{{this.savingPlansid[1].currency}}</td>
+            <td>{{this.savingPlansid[1].currentMoney}}</td>
+            <td>{{this.savingPlansid[1].currentSaves}}</td>
+            <td>{{this.savingPlansid[1].savesPercent}}</td>
         </tr>
     </table>
     

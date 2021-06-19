@@ -1,20 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SavingSheetsContainer, SavingSheets, Category, CashFlow} from "../models/finanzas";
-import {SessionContainer  }from "../models/session.model"/*
+
 @Injectable({
   providedIn: 'root'
 })
-/*export class SavingSheetsService {
-  apiEndPoint: string="";
-  constructor(private http: HttpClient) {    
+export class SavingSheetsService {
+
+  constructor(private http: HttpClient) { }
+  findAll(): Observable<SavingSheetsContainer> {
+    return this.http.get<SavingSheetsContainer>("https://lsp-finanzas-api.herokuapp.com/api/v1/savingSheets")
   }
-   findAll(): Observable<SavingSheetsContainer> {
-     return this.http.get<SavingSheetsContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan")
-   }
-  savesheet(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, userId: number, savesgoals: Info[]):  Observable<SavingPlanContainer> {
-    return this.http.post<SavingSheetsContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
-     currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
-  }
-}*/
+ create(active: boolean, categories: Category[], endDate: "2021-06-12T19:02:16.985Z", idSavingPlan: string, period: number, savingSheetsName: string, startDate: "2020-06-12T19:02:16.985Z"):  Observable<SavingSheetsContainer> {
+   return this.http.post<SavingSheetsContainer>("https://lsp-finanzas-api.herokuapp.com/api/v1/savingSheets",{active: active, categories: categories,
+   endDate: endDate, idSavingPlan: idSavingPlan, period: period, savingSheetsName: savingSheetsName, startDate: startDate})
+ }
+}

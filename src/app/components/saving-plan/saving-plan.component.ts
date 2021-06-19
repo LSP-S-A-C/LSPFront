@@ -14,6 +14,7 @@ import { Router } from "@angular/router";
 export class SavingPlanComponent implements OnInit {
   plan: SavingPlans
   savingPlans: SavingPlans[]
+  savingPlansid: SavingPlans[]
   error: string = ""
   constructor(private storageService: StorageService,
     private router: Router,private savingPlanService: SavingPlanService) { }
@@ -25,6 +26,16 @@ export class SavingPlanComponent implements OnInit {
       data => {
         this.savingPlans = data.body
         console.log(this.savingPlans)
+      },
+      error => {
+        this.error = error.error.message
+      }
+    )
+
+    this.savingPlanService.findbyID(this.storageService.getCurrentUser().id).subscribe(
+      data => {
+        this.savingPlansid = data.body
+        console.log(this.savingPlansid)
       },
       error => {
         this.error = error.error.message

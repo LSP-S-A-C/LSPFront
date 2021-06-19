@@ -49,8 +49,13 @@ export class DashboardComponent implements OnInit {
       let savesPercent: number = this.subForm.value.savesPercent;
       let userId: number = this.user.id;
       let savesgoals: [];
-
+      
       console.log(currency);
+      console.log(currentMoney);
+      console.log(currentSaves);
+      console.log(savesPercent);
+      console.log(userId);
+      console.log(savesgoals);
 
       this.savingPlanService.saves(currency, currentMoney, currentSaves, savesPercent, userId, savesgoals).subscribe(
         data => {
