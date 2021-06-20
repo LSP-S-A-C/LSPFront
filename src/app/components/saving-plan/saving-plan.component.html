@@ -1,5 +1,13 @@
 <div class="saving-plan">
-    <table>
+    <form class="text1" (ngSubmit) = "onSubmit()" #lForm="ngForm" [formGroup]="subForm" novalidate>
+        <label for="select" style="margin-left: 2%;">Ingresa el número de Saving Plan a observar: </label>
+        <select id="select" aria-autocomplete="0" class="select text2" type="text" placeholder="Plan ID number" formControlName="PlanID" style="background-color: rgb(255, 219, 164);">
+            <option value=0>1</option>
+            <option value=1>2</option>
+        </select>
+        <button type="submit" style="padding-top: 0%;padding-bottom: 0%; font-size: 40%; text-align: center; margin-top: -2px;">BUSCAR</button>
+    </form>
+    <table class="text-center">
         <thead>
             <td><b>Moneda</b></td>
             <td><b>Dinero Actual</b></td>
@@ -8,15 +16,22 @@
             <td><b>Metas de Ahorro</b></td>
         </thead>
         <tr>
-            <td>{{this.savingPlansid[1].currency}}</td>
-            <td>{{this.savingPlansid[1].currentMoney}}</td>
-            <td>{{this.savingPlansid[1].currentSaves}}</td>
-            <td>{{this.savingPlansid[1].savesPercent}}</td>
+            <td>{{this.savingPlansplanid.currency}}</td>
+            <td>{{this.savingPlansplanid.currentMoney}}</td>
+            <td>{{this.savingPlansplanid.currentSaves}}</td>
+            <td>{{this.savingPlansplanid.savesPercent}}</td>
         </tr>
     </table>
     
     <div>
-        <button class="pink-button" (click)="openSavingGoals()">METAS DE AHORRO</button>
-    </div>  
-
+        <button class="button_default" style="height: fit-content; float: right; margin-right: 4.5%;" (click)="openSavingGoals()">METAS DE AHORRO</button>
+    </div>
+    <div class="last_space" style="float: left; margin-top: 4.5%;margin-left: 2%;">
+        <button class="button_default" (click)="Back()">VOLVER</button>
+    </div>
+    <br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
 </div>

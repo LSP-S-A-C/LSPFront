@@ -26,10 +26,12 @@ export class SavingPlanService {
     return this.http.post<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan",{currency: currency, currentMoney: currentMoney,
      currentSaves: currentSaves, savesPercent: savesPercent, userId: userId, savesgoals: savesgoals})
   } 
-  findbyID(id: number): Observable<SavingPlanContainer> {
+  findbyuserID(id: number): Observable<SavingPlanContainer> {
     return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan/user/"+ id.toString())
   }
-
+  findbyplanID(id: number): Observable<SavingPlanContainer> {
+    return this.http.get<SavingPlanContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savingplan/"+ id.toString())
+  }
 
   getCurrentPlan(): SavingPlans {
     var plan: SavingPlans = this.currentPlan;

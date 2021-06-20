@@ -1,0 +1,38 @@
+.select{
+    width: 5%;
+    height: 50px;
+    font-family: 'Oswald';
+}
+.text-center{
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 30px;
+}
+.text1{
+    color:#4c956c;
+    font-family: 'Anton';
+    font-size:46px;
+    letter-spacing: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.text2{
+    color:#000000;
+    font-family: 'Anton';
+    font-size:50%;
+    letter-spacing: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+.button_default{
+    position: relative;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 23px;
+    height: 41px;
+    width: 192px;
+    background-color: #FFC9B9;
+    cursor: pointer;
+}
