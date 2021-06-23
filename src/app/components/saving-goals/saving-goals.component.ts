@@ -21,5 +21,8 @@ export class SavingGoalsComponent implements OnInit {
     //console.log("bbbbbbbbbbbbbb");
     this.router.navigate(['/goal-info'])
   }
-  
+  Back(){
+    this.router.navigate(['/saving-plan']);
+    //console.log("aaaaaaaaaa");
+  }
 }

@@ -7,12 +7,16 @@
         </div>
         <div>
             <span class="subtitle">Descripcion </span>
-            <input class="goal" type="description" placeholder=" "  formControlName="description">{{getGoal().description}}
+            {{this.goalContainerId[1].description}}
         </div>
         <div>
             <span class="subtitle">Monto </span>
-            <INPUT TYPE="NUMBER" MIN="0" MAX="1000" STEP="1" VALUE="0" SIZE="1">
+            {{this.goalContainerId[1].money}}
         </div>
+        <div>
+            <span class="subtitle">Imagen </span>
+            {{this.goalContainerId[1].image}}
+                   </div>
   
         <div class="last_space" style="float: right;">
             <button class="button_default"  (click)="Back()">VOLVER</button>

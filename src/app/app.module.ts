@@ -20,6 +20,8 @@ import { AuthorizationGuard } from './guards/AuthorizationGuard';
 import { AuthInterceptor } from './interceptors/AuthInterceptor';
 import { LoginPopUpComponent } from './components/login-pop-up/login-pop-up.component';
 import { TestComponent } from './components/test/test.component';
+import{SavingGoalsAddComponent} from './components/saving-goals-add/saving-goals-add.component';
+import { GoalInfoComponent } from './components/goal-info/goal-info.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { TestComponent } from './components/test/test.component';
     SavingPlanComponent,
     LoginPopUpComponent,
     TestComponent,
+    SavingGoalsAddComponent,
+    GoalInfoComponent,
   ],
   imports: [
     BrowserModule,

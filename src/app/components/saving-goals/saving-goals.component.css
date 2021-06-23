@@ -30,3 +30,15 @@
 .goal-image{
     cursor: pointer;
 }
+.button_default{
+    position: absolute;
+    right: 10px;
+    top:370px;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 23px;
+    height: 41px;
+    width: 192px;
+    background-color: #FFC9B9;
+    cursor: pointer;
+}
