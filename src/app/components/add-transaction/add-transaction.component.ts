@@ -35,6 +35,7 @@ export class AddTransactionComponent implements OnInit {
       this.SheetsForm = this.formBuilder.group({
       active: ['', Validators.required],
       idSavingPlan: ['', Validators.required],
+      savingSheetsName: ['', Validators.required],
       period: ['', Validators.required],
       startDate: ['', Validators.required],
       startTime: ['', Validators.required],
@@ -53,6 +54,15 @@ export class AddTransactionComponent implements OnInit {
       color: ['', Validators.required],
       recurrent: ['', Validators.required]
     })
+    this.sheetsService.findAll().subscribe(
+      data => {
+        this.savingSheet = data.body
+        console.log(this.savingSheet)
+      },
+      error => {
+        this.error = error.error.message
+      }
+    )
   }
   onSavingSheets(): void {
     this.error = null;

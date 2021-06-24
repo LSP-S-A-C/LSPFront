@@ -4,6 +4,7 @@
         <label for="active">Hoja de ahorros activa:</label>    
         <input class="input" input type=checkbox checked name=active placeholder="active"  formControlName="active">
         <input class="input" type="text" placeholder="idSavingPlan"  formControlName="idSavingPlan">
+        <input class="input" type="text" placeholder="savingSheetsName"  formControlName="savingSheetsName">
         <input class="input" type="number"  placeholder="period"  formControlName="period">
         <label for="start">Start date:</label>
         <input class="input" type="date" id="start" name="trip-start"
@@ -50,7 +51,11 @@
         <input class="input" type="number" placeholder="id"  formControlName="id">
         <input class="input" type="number" placeholder="amount"  formControlName="amount">
         <input class="input" type="text"  placeholder="cashFlowName"  formControlName="cashFlowName">
-        <input class="input" type="color" placeholder="color"  formControlName="color">
+        <label for="select">Tipo:</label> 
+        <select class="input" id="select" placeholder="color"  formControlName="color">
+        <option value="Green">Ingreso</option>
+        <option value="Red">Gastos</option>
+        </select>
         <label for="recurrent">Recurrente:</label>    
         <input class="input" input type=checkbox checked name=recurrent placeholder="recurrent"  formControlName="recurrent">
 
