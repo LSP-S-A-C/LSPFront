@@ -22,12 +22,15 @@ export class goalStorageService {
 
   }
    findAll(): Observable<GoalContainer> {
-     return this.http.get<GoalContainer>("http://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals")
+     return this.http.get<GoalContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals")
    }
   saves(description: string, amountGoal: number, pathImage:string,savingplan:SavingPlans):  Observable<GoalContainer> {
-    return this.http.post<GoalContainer>("http://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals",{amountGoal: amountGoal, pathImage:pathImage, description:description, savingplan:savingplan})
+    return this.http.post<GoalContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals",{amountGoal: amountGoal, pathImage:pathImage, description:description, savingplan:savingplan})
   } 
-  findbyID(id: number): Observable<GoalContainer> {
+  findbyuserID(id: number): Observable<GoalContainer> {
+    return this.http.get<GoalContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals/"+ id.toString())
+  }
+  findbygoalID(id: number): Observable<GoalContainer> {
     return this.http.get<GoalContainer>("https://lsp-ahorros-api.herokuapp.com/api/v1/savesgoals"+ id.toString())
   }
 

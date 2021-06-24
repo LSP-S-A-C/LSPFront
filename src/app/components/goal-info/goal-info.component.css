@@ -24,3 +24,23 @@
     background-color: #FFC9B9;
     cursor: pointer;
 }
+.select{
+    position: absolute;
+    width: 5%;
+    height: 50px;
+    top:120px;
+    left:180px;
+    font-family: 'Oswald';
+}
+.buscar{
+    position: absolute;
+    left: 300px;
+    top:130px;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 23px;
+    height: 41px;
+    width: 100px;
+    background-color: #FFC9B9;
+    cursor: pointer;
+}

@@ -5,6 +5,8 @@ import User from 'src/app/models/user.model';
 import { GoalContainer } from 'src/app/models/goal-info.model';
 import { StorageService } from 'src/app/services/storage.service';
 import {goalStorageService} from 'src/app/services/goal-info.service.ts.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {SavingPlanService} from './../../services/saving-plan.service';
 @Component({
   selector: 'goal-info',
   templateUrl: './goal-info.component.html',
@@ -14,14 +16,20 @@ export class GoalInfoComponent implements OnInit {
   goal:Info
   goalContainer:Info[]
   goalContainerId:Info[]
+  goalUserid: Info[]
+  goalID:Info
+ 
   error:string=""
-  constructor(private router: Router,private storageService:StorageService, private goalStorageService:goalStorageService ) { }
+  public subForm:FormGroup;
+  constructor(private router: Router,private storageService:StorageService, private goalStorageService:goalStorageService,private formBuilder: FormBuilder,savingPlanService: SavingPlanService ) { }
 
   ngOnInit(): void {
-   this.goal=this.goalStorageService.getCurrentGoal();
-
+    this.subForm=this.formBuilder.group({
+      GoalID:['',Validators.required]
+    })
+    this.goal=this.goalStorageService.getCurrentGoal();
     this.goalStorageService.findAll().subscribe(
-      data =>{
+      data=>{
         this.goalContainer=data.body
         console.log(this.goalContainer)
       },
@@ -29,7 +37,8 @@ export class GoalInfoComponent implements OnInit {
         this.error=error.error.message
       }
     )
-    this.goalStorageService.findbyID(this.storageService.getCurrentUser().id).subscribe(
+   
+    /*this.goalStorageService.findbyuserID(this.savingplantry.getCurrentPlan().id).subscribe(
       data=>{
         this.goalContainerId=data.body
         console.log(this.goalContainerId)
@@ -37,8 +46,18 @@ export class GoalInfoComponent implements OnInit {
       error=>{
         this.error=error.error.message
       }
-
-    )
+    )*/
+  }
+  onSubmit(){
+    this.error=null;
+    if(this.subForm.valid){
+      let GoalID:number=this.subForm.value.GoalID;
+      this.goalID=this.goalUserid[GoalID];
+      console.log(this.goalID);
+    }
+    else{
+      this.error="ERROR";
+    } 
   }
 
   Back(){
@@ -48,4 +67,9 @@ export class GoalInfoComponent implements OnInit {
   getGoal():any{
     return this.goal;
   }
+  logout() {
+    this.storageService.logout();
+  }
+ 
+  
 }

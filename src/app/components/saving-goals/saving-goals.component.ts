@@ -10,6 +10,7 @@ export class SavingGoalsComponent implements OnInit {
   constructor(private router: Router ) { }
 
   ngOnInit(): void {
+    
   }
 
   onClick(){

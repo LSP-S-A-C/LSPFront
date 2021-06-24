@@ -5,12 +5,14 @@ export class Info {
     amountGoal: number;
     pathImage:string;
     savingplan:SavingPlans;
+    id:number;
   
-    constructor(description:string,amountGoal:number,pathImage:string,id:number) {
+    constructor(description:string,amountGoal:number,pathImage:string,idSavingplan:number,id:number) {
         this.description = description;
         this.amountGoal=amountGoal;
         this.pathImage=pathImage;
-        this.savingplan.id= id;
+        this.savingplan.id= idSavingplan;
+        this.id=id;
         
     }
 }

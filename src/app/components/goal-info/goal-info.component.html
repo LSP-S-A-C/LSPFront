@@ -1,23 +1,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+   
 <div class="form-popup" id="myForm" style="display: block;">
     <div class="goal-info">
         <div>
-            <span class="title">NOMBRE DE LA META </span>
-        </div>
-        <div>
-            <span class="subtitle">Descripcion </span>
-            {{this.goalContainerId[1].description}}
-        </div>
-        <div>
-            <span class="subtitle">Monto </span>
-            {{this.goalContainerId[1].amountGoal}}
-        </div>
-        <div>
-            <span class="subtitle">Imagen </span>
-            {{this.goalContainerId[1].pathImage}}
-                   </div>
   
+        </div>
+        <div >
+            <div >
+                <span class="subtitle">Descripcion </span>
+                {{this.goalID.description}}
+            </div>
+            <div>
+                <span class="subtitle">Monto </span>
+                {{this.goalID.amountGoal}}
+            </div>
+            <div>
+                <span class="subtitle">Imagen </span>
+                {{this.goalID.pathImage}}
+            </div>
+        </div>
+    
+        <br>
+        <br>
+        <br>    
         <div class="last_space" style="float: right;">
             <button class="button_default"  (click)="Back()">VOLVER</button>
         </div>
