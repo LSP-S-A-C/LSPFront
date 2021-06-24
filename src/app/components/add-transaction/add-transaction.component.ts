@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CashFlow, Category, CashFlowContainer } from 'src/app/models/finanzas';
 import { SessionContainer } from 'src/app/models/session.model';
-
-import { AuthService } from '../../services/auth.service';
+import { CashflowService } from '../../services/cashflow.service';
 import { StorageService} from '../../services/storage.service';
 
 @Component({
@@ -13,47 +14,45 @@ import { StorageService} from '../../services/storage.service';
 })
 export class AddTransactionComponent implements OnInit {
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, 
-    private router: Router, private storageService: StorageService) { }
-  
-  public error: string = null;
-  public loginForm: FormGroup;
+  public subForm: FormGroup;
   public submitted: Boolean = false;
+  cashflow: CashFlow[];
+  error: string = "";
+  public msg: string = null;
+
+  constructor(private cashflowService: CashflowService, private formBuilder: FormBuilder, private router: Router, private storageService: StorageService) { }
+  
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      this.subForm = this.formBuilder.group({
+      amount: ['', Validators.required],
+      cashFlowName: ['', Validators.required],
+      color: ['', Validators.required],
+      recurrent: ['', Validators.required]
     })
   }
   onSubmit(): void {
     this.error = null;
-    if (this.loginForm.valid){
-      let email: string = this.loginForm.value.email;
-      let password: string = this.loginForm.value.password;
+    if (this.subForm.valid){
+      let amount: number = this.subForm.value.amount;
+      let cashFlowName: string = this.subForm.value.cashFlowName;
+      let color: string = this.subForm.value.cashFlowName;
+      let recurrent: boolean = this.subForm.value.cashFlowName;
+      let category: [];
 
-      this.authService.login(email, password).subscribe(
-        data => this.correctLogin(data),
+      this.cashflowService.create(amount, cashFlowName, category, color, recurrent).subscribe(
+        data => {
+          //this.cashflow=data.body;
+          console.log(this.cashflow[0].amount)
+        },
         error => {
           this.error = error.error.message;
         }
       )
     }
     else {
-      this.error = "Debe ingresar sus credenciales"
+      this.error = "Debe completar los datos"
     }
   
-  }
-  private correctLogin(data: SessionContainer) {
-    this.error = null;
-    console.log(data);
-    if(data.body) {
-      this.storageService.setCurrentSession(data.body);
-      this.router.navigate(['/dashboard']);
-      console.log("hola");
-    }
-    else{
-      this.error = "Error en el login, por favor inténtelo nuevamente";
-    }
   }
 
 }

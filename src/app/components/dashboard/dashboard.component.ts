@@ -82,5 +82,7 @@ export class DashboardComponent implements OnInit {
   openDashboard() {
     this.router.navigate(['/dashboard']);
   }
-
+  openAT() {
+    this.router.navigate(['/add-transaction']);
+  }
 }

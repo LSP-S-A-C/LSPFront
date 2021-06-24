@@ -41,6 +41,13 @@ export class Category {
         this.cashFlows = cashFlows;
     }
 }
+
+export class CashFlowContainer {
+    public ok: string;
+    public message: string;
+    public body: CashFlow[]
+}
+
 export class CashFlow {
     id:number;
     color: number;
@@ -48,7 +55,7 @@ export class CashFlow {
     currentSaves: number;
     cashFlowName: string;
     recurrent: boolean;
-    category: Category;
+    category: Category
 
     constructor(id: number, color: number, amount: number, currentSaves: number, cashFlowName: string, recurrent: boolean, category: Category) {
         this.id = id;

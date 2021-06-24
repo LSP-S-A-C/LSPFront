@@ -20,6 +20,7 @@ import { AuthorizationGuard } from './guards/AuthorizationGuard';
 import { AuthInterceptor } from './interceptors/AuthInterceptor';
 import { LoginPopUpComponent } from './components/login-pop-up/login-pop-up.component';
 import { TestComponent } from './components/test/test.component';
+import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { TestComponent } from './components/test/test.component';
     SavingPlanComponent,
     LoginPopUpComponent,
     TestComponent,
+    AddTransactionComponent,
   ],
   imports: [
     BrowserModule,

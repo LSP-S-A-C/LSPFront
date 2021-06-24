@@ -90,25 +90,3 @@ export class SavingPlanComponent implements OnInit {
   }
 
 }
-/*
-{
-  "currency": "PEN",
-  "currentAmount": 0,
-  "expectedSavingsRatio": 0,
-  "id": 0,
-  "period": 0,
-  "picturePath": "string",
-  "salary": 0,
-  "savingsSheets": null,
-  "user": {
-    "email": "string",
-    "employmentStatus": "UNEMPLOYED",
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "phone": "string",
-    "savingsPlans": [
-      null
-    ]
-  }
-}*/
