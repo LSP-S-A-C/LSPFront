@@ -12,7 +12,7 @@ export class SavingSheetsService {
   findAll(): Observable<SavingSheetsContainer> {
     return this.http.get<SavingSheetsContainer>("https://lsp-finanzas-api.herokuapp.com/api/v1/savingSheets")
   }
- create(active: boolean, categories: Category[], endDate: Date, idSavingPlan: string, period: number, savingSheetsName: string, startDate: Date):  Observable<SavingSheetsContainer> {
+ create(active: boolean, categories: Category[], endDate: string, idSavingPlan: string, period: number, savingSheetsName: string, startDate: string):  Observable<SavingSheetsContainer> {
    return this.http.post<SavingSheetsContainer>("https://lsp-finanzas-api.herokuapp.com/api/v1/savingSheets",{active: active, categories: categories,
    endDate: endDate, idSavingPlan: idSavingPlan, period: period, savingSheetsName: savingSheetsName, startDate: startDate})
  }

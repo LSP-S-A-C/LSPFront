@@ -8,6 +8,7 @@ import { SavingSheetsService } from '../../services/saving-sheets.service';
 import { CashflowService } from '../../services/cashflow.service';
 import { CategoryService } from '../../services/category.service';
 import { StorageService} from '../../services/storage.service';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-add-transaction',
@@ -36,7 +37,9 @@ export class AddTransactionComponent implements OnInit {
       idSavingPlan: ['', Validators.required],
       period: ['', Validators.required],
       startDate: ['', Validators.required],
-      endDate: ['', Validators.required]
+      startTime: ['', Validators.required],
+      endDate: ['', Validators.required],
+      endTime: ['', Validators.required],
     })
     this.CategoryForm = this.formBuilder.group({
       id: ['', Validators.required],
@@ -57,12 +60,24 @@ export class AddTransactionComponent implements OnInit {
       let active: boolean = this.SheetsForm.value.active;
       let idSavingPlan: string = this.SheetsForm.value.idSavingPlan;
       let period: number = this.SheetsForm.value.period;
-      let startDate: Date = this.SheetsForm.value.startDate;
-      let endDate: Date = this.SheetsForm.value.endDate;
+      let sd: Date = this.SheetsForm.value.startDate;
+      let ed: Date = this.SheetsForm.value.endDate;
       //startDate = "2020-06-12T19:02:16.985Z";
       //endDate = "2021-06-12T19:02:16.985Z";
+      let startTime: Time = this.SheetsForm.value.startTime;
+      let endTime: Time = this.SheetsForm.value.endTime;
       let savingSheetsName: string = this.SheetsForm.value.savingSheetsName;
       let categories: [];
+      console.log(sd);
+      console.log(ed);
+      console.log(startTime);
+      console.log(endTime);
+      let startDate: string = sd.toString() + "T" + startTime.toString() + ":16.985Z";
+      let endDate: string = ed.toString() + "T" + endTime.toString() + ":16.985Z";
+      console.log(startDate);
+      console.log(endDate);
+      console.log(active);
+      console.log(period);
 
       this.sheetsService.create(active, categories, endDate, idSavingPlan, period, savingSheetsName, startDate).subscribe(
         data => {

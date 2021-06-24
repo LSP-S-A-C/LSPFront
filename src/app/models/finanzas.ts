@@ -8,13 +8,13 @@ export class SavingSheets {
     id:number;
     idSavingPlan: string;
     period: number;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     savingSheetsName: string;
     active: boolean;
     categories: Category[];
 
-    constructor(id:number, idSavingPlan: string, period: number, startDate: Date, endDate: Date, savingSheetsName: string, active: boolean, categories: Category[]) {
+    constructor(id:number, idSavingPlan: string, period: number, startDate: string, endDate: string, savingSheetsName: string, active: boolean, categories: Category[]) {
         this.id = id;
         this.idSavingPlan = idSavingPlan;
         this.period = period;

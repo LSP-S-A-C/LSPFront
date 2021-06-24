@@ -1,19 +1,26 @@
 <div class="container2">
     <div class="caja">
         <form class="my-form" (ngSubmit) = "onSavingSheets()" #lForm="ngForm" [formGroup] = "SheetsForm" novalidate>
-            
-        <input class="input" type="text" placeholder="active"  formControlName="active">
+        <label for="active">Hoja de ahorros activa:</label>    
+        <input class="input" input type=checkbox checked name=active placeholder="active"  formControlName="active">
         <input class="input" type="text" placeholder="idSavingPlan"  formControlName="idSavingPlan">
         <input class="input" type="number"  placeholder="period"  formControlName="period">
         <label for="start">Start date:</label>
         <input class="input" type="date" id="start" name="trip-start"
         value="2018-07-22"
         min="2018-01-01" max="2021-12-31" placeholder="startDate"  formControlName="startDate">
+        
+        <input class="input" type="time" id="appt" name="appt"
+        min="09:00" max="18:00" placeholder="startTime"  formControlName="startTime" required>
+        
         <label for="end">End date:</label>
         <input class="input" type="date" id="end" name="trip-start"
         value="2018-07-22"
         min="2018-01-01" max="2021-12-31" placeholder="endDate"  formControlName="endDate">
 
+        <input class="input" type="time" id="endt" name="endt"
+        min="09:00" max="18:00" placeholder="endTime"  formControlName="endTime" required>
+        
         <div class="container-button">
             <button type="submit" class="signup-button">GUARDAR</button>
             <div *ngIf="error"> {{error}} </div>
@@ -44,7 +51,8 @@
         <input class="input" type="number" placeholder="amount"  formControlName="amount">
         <input class="input" type="text"  placeholder="cashFlowName"  formControlName="cashFlowName">
         <input class="input" type="color" placeholder="color"  formControlName="color">
-        <input class="input" type="text" placeholder="recurrent"  formControlName="recurrent">
+        <label for="recurrent">Recurrente:</label>    
+        <input class="input" input type=checkbox checked name=recurrent placeholder="recurrent"  formControlName="recurrent">
 
         <div class="container-button">
             <button type="submit" class="signup-button">GUARDAR</button>

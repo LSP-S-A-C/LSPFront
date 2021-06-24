@@ -17,6 +17,7 @@ export class SavingPlanComponent implements OnInit {
   plan: SavingPlans
   savingPlans: SavingPlans[]
   savingPlansid: SavingPlans[]
+  savingPlansUserid: SavingPlans[]
   savingPlansplanid: SavingPlans
   error: string = ""
   public subForm: FormGroup;
@@ -28,17 +29,8 @@ export class SavingPlanComponent implements OnInit {
     this.error = null;
     if (this.subForm.valid){
       let PlanID: number = this.subForm.value.PlanID;
-      this.savingPlanService.findbyuserID(this.storageService.getCurrentUser().id).subscribe(
-        data => {
-          this.savingPlansid = data.body
-          console.log(this.savingPlansid)
-        },
-        error => {
-          this.error = error.error.message
-        }
-      )
-      this.savingPlansplanid=this.savingPlansid[PlanID];
-      
+      this.savingPlansplanid=this.savingPlansUserid[PlanID];
+      console.log(this.savingPlansplanid);
     }
     else {
       this.error = "Debe completar todos los datos";
@@ -64,8 +56,8 @@ export class SavingPlanComponent implements OnInit {
 
     this.savingPlanService.findbyuserID(this.storageService.getCurrentUser().id).subscribe(
       data => {
-        this.savingPlansid = data.body
-        console.log(this.savingPlansid)
+        this.savingPlansUserid = data.body
+        console.log(this.savingPlansUserid)
       },
       error => {
         this.error = error.error.message
