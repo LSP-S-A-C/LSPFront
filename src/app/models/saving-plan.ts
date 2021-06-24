@@ -15,12 +15,12 @@ export class SavingPlans {
     savesPercent: number;
     savesgoals: Info[];
 
-    constructor(currency: string, currentMoney: number, currentSaves: number, savesPercent: number, savesgoals: Info[], id: number) {
+    constructor(id: number, currency: string, currentMoney: number, currentSaves: number, savesPercent: number, savesgoals: Info[]) {
+        this.id = id;
         this.currency = currency;
         this.currentMoney = currentMoney;
         this.currentSaves = currentSaves;
         this.savesPercent = savesPercent;
-        this.id = id;
         this.savesgoals = savesgoals;
     }
 }

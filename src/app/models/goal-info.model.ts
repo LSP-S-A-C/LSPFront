@@ -2,16 +2,16 @@ import { SavingPlans } from "./saving-plan";
 
 export class Info {
     description: string;
-    money: number;
-    image:string;
-    idSavingPlans:SavingPlans;
+    amountGoal: number;
+    pathImage:string;
+    savingplan:SavingPlans;
   
-    constructor(description:string,money:number,image:string,id:number) {
+    constructor(description:string,amountGoal:number,pathImage:string,id:number) {
         this.description = description;
-        this.money=money;
-        this.image=image;
-        this.idSavingPlans.id= id;
-       
+        this.amountGoal=amountGoal;
+        this.pathImage=pathImage;
+        this.savingplan.id= id;
+        
     }
 }
 export class GoalContainer {

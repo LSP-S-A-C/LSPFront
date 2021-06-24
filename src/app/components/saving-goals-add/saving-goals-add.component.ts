@@ -22,17 +22,20 @@ export class SavingGoalsAddComponent implements OnInit {
   public goalForm: FormGroup
   error:string=""
   public msg:string=null;
+  sp:SavingPlans = new SavingPlans(1,null,null,null,null,null);
   constructor(private storageService:StorageService,private formBuilder:FormBuilder,private router:Router,private GoalStorageService:goalStorageService,private savingPlanService: SavingPlanService){}
 
   ngOnInit():void{
     this.user=this.storageService.getCurrentUser();
     console.log(this.user);
+    
+    console.log(this.sp)
     this.goalForm=this.formBuilder.group({  
       description:['',Validators.required],
       money:['',Validators.required],
       image:['',Validators.required]
     })
-    this.savingPlanService.findbyuserID(this.storageService.getCurrentUser().id).subscribe(
+    this.savingPlanService.findbyuserID(1).subscribe(
       data => {
         this.savingPlansid = data.body
         console.log(this.savingPlansid)
@@ -47,21 +50,19 @@ export class SavingGoalsAddComponent implements OnInit {
 onSubmit():void{
   this.error=null;
   this.msg=null;
-
   if(this.goalForm.valid){
     let description:string=this.goalForm.value.description;
     let money:number=this.goalForm.value.money;
     let image:string=this.goalForm.value.image;
-  
 
     console.log(description);
     console.log(money);
     console.log(image);
-    console.log(this.savingPlansid[1])
+    console.log(this.sp)
 
  
 
-    this.GoalStorageService.saves(description,money,image,this.savingPlansid[1]).subscribe(
+    this.GoalStorageService.saves(description,money,image,this.sp).subscribe(
       data=>{
         this.goal=data.body
         console.log(this.goal)
@@ -86,4 +87,3 @@ Back(){
   //console.log("aaaaaaaaaa");
 }
 }
-
