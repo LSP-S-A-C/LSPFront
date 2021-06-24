@@ -21,6 +21,8 @@ import { AuthInterceptor } from './interceptors/AuthInterceptor';
 import { LoginPopUpComponent } from './components/login-pop-up/login-pop-up.component';
 import { TestComponent } from './components/test/test.component';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
+import{SavingGoalsAddComponent} from './components/saving-goals-add/saving-goals-add.component';
+import { GoalInfoComponent } from './components/goal-info/goal-info.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { AddTransactionComponent } from './components/add-transaction/add-transa
     LoginPopUpComponent,
     TestComponent,
     AddTransactionComponent,
+    SavingGoalsAddComponent,
+    GoalInfoComponent,
   ],
   imports: [
     BrowserModule,

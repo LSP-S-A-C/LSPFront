@@ -1,0 +1,30 @@
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<div class="container">
+    <form class="my-form" (ngSubmit) = "onSubmit()" #lForm = "ngForm" [formGroup] = "goalForm" novalidate>
+
+        <span class="subtitle">Descripcion </span>
+        <input class="goal-input" type="description-text" placeholder="Descripción" formControlName="description">
+        <br>
+        <span class="subtitle">Costo </span>
+        <input class="goal-input" type="money-goal-text" placeholder="Costo" formControlName="money">
+        <br>
+        <span class="subtitle">Imagen </span>
+        <input class="goal-input" type="image-text" placeholder="Imagen" formControlName="image">
+
+        <div class="container-buton">
+            <button type="submit" class="AddGoal-button">AÑADIR</button>
+            <div *ngIf="error">{{error}}</div>
+            <div *ngIf="msg">{{msg}}</div>
+        </div>
+    
+    </form>
+    <br>
+    <br>
+
+    <div class="last_space" style="float: right;">
+        <button class="button_default"  (click)="Back()">VOLVER</button>
+    </div>
+</div>
+
