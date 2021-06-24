@@ -25,6 +25,13 @@ export class SavingSheets {
         this.categories = categories;
     }
 }
+
+export class CategoriesContainer {
+    public ok: string;
+    public message: string;
+    public body: Category[];
+}
+
 export class Category {
     id:number;
     categoryName: string;
