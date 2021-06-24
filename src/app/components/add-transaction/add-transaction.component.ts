@@ -32,18 +32,19 @@ export class AddTransactionComponent implements OnInit {
   
   ngOnInit(): void {
       this.SheetsForm = this.formBuilder.group({
-      amount: ['', Validators.required],
-      cashFlowName: ['', Validators.required],
-      color: ['', Validators.required],
-      recurrent: ['', Validators.required]
+      active: ['', Validators.required],
+      idSavingPlan: ['', Validators.required],
+      period: ['', Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required]
     })
     this.CategoryForm = this.formBuilder.group({
-      amount: ['', Validators.required],
-      cashFlowName: ['', Validators.required],
-      color: ['', Validators.required],
-      recurrent: ['', Validators.required]
+      id: ['', Validators.required],
+      categoryName: ['', Validators.required],
+      priority: ['', Validators.required]
     })
     this.CashFlowForm = this.formBuilder.group({
+      id: ['', Validators.required],
       amount: ['', Validators.required],
       cashFlowName: ['', Validators.required],
       color: ['', Validators.required],
@@ -53,15 +54,14 @@ export class AddTransactionComponent implements OnInit {
   onSavingSheets(): void {
     this.error = null;
     if (this.SheetsForm.valid){
-      let id: number = 1;
+      let active: boolean = this.SheetsForm.value.active;
       let idSavingPlan: string = this.SheetsForm.value.idSavingPlan;
       let period: number = this.SheetsForm.value.period;
-      let startDate: string = this.SheetsForm.value.startDate;
-      let endDate: string = this.SheetsForm.value.endDate;
-      startDate = "2020-06-12T19:02:16.985Z";
-      endDate = "2021-06-12T19:02:16.985Z";
+      let startDate: Date = this.SheetsForm.value.startDate;
+      let endDate: Date = this.SheetsForm.value.endDate;
+      //startDate = "2020-06-12T19:02:16.985Z";
+      //endDate = "2021-06-12T19:02:16.985Z";
       let savingSheetsName: string = this.SheetsForm.value.savingSheetsName;
-      let active: boolean = true;
       let categories: [];
 
       this.sheetsService.create(active, categories, endDate, idSavingPlan, period, savingSheetsName, startDate).subscribe(
@@ -109,14 +109,14 @@ export class AddTransactionComponent implements OnInit {
       let id: number = this.CashFlowForm.value.id;
       let amount: number = this.CashFlowForm.value.amount;
       let cashFlowName: string = this.CashFlowForm.value.cashFlowName;
-      let color: string = this.CashFlowForm.value.cashFlowName;
-      let recurrent: boolean = this.CashFlowForm.value.cashFlowName;
+      let color: string = this.CashFlowForm.value.color;
+      let recurrent: boolean = this.CashFlowForm.value.recurrent;
       this.category.id = id;
 
       this.cashflowService.create(amount, cashFlowName, this.category, color, recurrent).subscribe(
         data => {
           this.cashflow=data.body;
-          console.log(this.cashflow[0].amount)
+          console.log(this.cashflow)
         },
         error => {
           this.error = error.error.message;
