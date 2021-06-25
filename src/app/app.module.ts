@@ -22,7 +22,12 @@ import { LoginPopUpComponent } from './components/login-pop-up/login-pop-up.comp
 import { TestComponent } from './components/test/test.component';
 import { AddTransactionComponent } from './components/add-transaction/add-transaction.component';
 import{SavingGoalsAddComponent} from './components/saving-goals-add/saving-goals-add.component';
-import { GoalInfoComponent } from './components/goal-info/goal-info.component'
+import { GoalInfoComponent } from './components/goal-info/goal-info.component';
+import { GoalInfoTwoComponent } from './components/goal-info-two/goal-info-two.component';
+import { GoalInfoThreeComponent } from './components/goal-info-three/goal-info-three.component';
+import { GoalInfoFourComponent } from './components/goal-info-four/goal-info-four.component';
+import { GoalInfoFiveComponent } from './components/goal-info-five/goal-info-five.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +42,11 @@ import { GoalInfoComponent } from './components/goal-info/goal-info.component'
     AddTransactionComponent,
     SavingGoalsAddComponent,
     GoalInfoComponent,
+    GoalInfoTwoComponent,
+    GoalInfoThreeComponent,
+    GoalInfoFourComponent,
+    GoalInfoFiveComponent,
+
   ],
   imports: [
     BrowserModule,

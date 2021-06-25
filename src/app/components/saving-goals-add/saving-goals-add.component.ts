@@ -19,6 +19,7 @@ export class SavingGoalsAddComponent implements OnInit {
   user:User
   savingPlansid: SavingPlans[]
   goal:Info[]
+  prueba:Info
   public goalForm: FormGroup
   error:string=""
   public msg:string=null;
@@ -50,7 +51,9 @@ export class SavingGoalsAddComponent implements OnInit {
 onSubmit():void{
   this.error=null;
   this.msg=null;
+ 
   if(this.goalForm.valid){
+    
     let description:string=this.goalForm.value.description;
     let money:number=this.goalForm.value.money;
     let image:string=this.goalForm.value.image;

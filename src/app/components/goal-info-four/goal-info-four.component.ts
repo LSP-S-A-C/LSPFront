@@ -8,10 +8,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {SavingPlanService} from './../../services/saving-plan.service';
 @Component({
   selector: 'goal-info',
-  templateUrl: './goal-info.component.html',
-  styleUrls: ['./goal-info.component.css']
+  templateUrl: './goal-info-four.component.html',
+  styleUrls: ['./goal-info-four.component.css']
 })
-export class GoalInfoComponent implements OnInit {
+export class GoalInfoFourComponent implements OnInit {
   goal:Info
   goalContainer:Info[]
   goalContainerId:Info[]
