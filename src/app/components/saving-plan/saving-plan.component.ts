@@ -21,6 +21,7 @@ export class SavingPlanComponent implements OnInit {
   savingPlansplanid: SavingPlans
   error: string = ""
   public subForm: FormGroup;
+  cant_saving_plans: number;
 
   constructor(private storageService: StorageService,
     private router: Router,private formBuilder: FormBuilder,private savingPlanService: SavingPlanService) { }
@@ -58,6 +59,8 @@ export class SavingPlanComponent implements OnInit {
       data => {
         this.savingPlansUserid = data.body
         console.log(this.savingPlansUserid)
+        console.log(this.savingPlansUserid.length)
+        this.cant_saving_plans = this.savingPlansUserid.length
       },
       error => {
         this.error = error.error.message
