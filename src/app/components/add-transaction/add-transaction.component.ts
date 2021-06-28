@@ -153,5 +153,8 @@ export class AddTransactionComponent implements OnInit {
     }
   
   }
+  Back(){
+    this.router.navigate(['/dashboard']);
+  }
 
 }

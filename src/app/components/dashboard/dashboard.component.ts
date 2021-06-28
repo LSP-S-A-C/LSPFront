@@ -26,7 +26,8 @@ export class DashboardComponent implements OnInit {
   public subForm: FormGroup
   error: string = ""
   public msg: string = null;
-  cs: number
+  cs: number;
+  labelcurr:string;
   id: number;
   constructor(private storageService: StorageService, private formBuilder: FormBuilder, private router: Router, private savingPlanService: SavingPlanService) { }
 
@@ -40,6 +41,9 @@ export class DashboardComponent implements OnInit {
         this.savingPlansplanid=this.savingPlansUserid[0];
         this.lastsavingPlansplanid=this.savingPlansUserid[this.savingPlansUserid.length-1];
         this.cs=this.lastsavingPlansplanid.currentSaves;
+        if(this.lastsavingPlansplanid.currency == "PEN") this.labelcurr= "S/.";
+        if(this.lastsavingPlansplanid.currency == "USD") this.labelcurr= "$";
+        if(this.lastsavingPlansplanid.currency == "EUR") this.labelcurr= "E ";
       },
       error => {
         this.error = error.error.message
