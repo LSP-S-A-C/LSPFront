@@ -26,18 +26,6 @@ export class SavingPlanComponent implements OnInit {
   constructor(private storageService: StorageService,
     private router: Router,private formBuilder: FormBuilder,private savingPlanService: SavingPlanService) { }
 
-  onSubmit(){
-    this.error = null;
-    if (this.subForm.valid){
-      let PlanID: number = this.subForm.value.PlanID;
-      this.savingPlansplanid=this.savingPlansUserid[PlanID];
-      console.log(this.savingPlansplanid);
-    }
-    else {
-      this.error = "Debe completar todos los datos";
-    }
-  }
-
   ngOnInit() {
     this.subForm = this.formBuilder.group({
       PlanID: ['', Validators.required]
@@ -48,19 +36,28 @@ export class SavingPlanComponent implements OnInit {
     this.savingPlanService.findAll().subscribe(
       data => {
         this.savingPlans = data.body
+        console.log("222")
         console.log(this.savingPlans)
+        console.log("333")
+        this.next()
       },
       error => {
         this.error = error.error.message
       }
     )
 
+  }
+
+  next(){
+    
     this.savingPlanService.findbyuserID(this.storageService.getCurrentUser().id).subscribe(
       data => {
         this.savingPlansUserid = data.body
         console.log(this.savingPlansUserid)
-        console.log(this.savingPlansUserid.length)
-        this.cant_saving_plans = this.savingPlansUserid.length
+        this.savingPlansplanid=this.savingPlansUserid[this.savingPlansUserid.length-1];
+        console.log("ccc")
+        console.log(this.savingPlansplanid)
+        console.log("ddd")
       },
       error => {
         this.error = error.error.message

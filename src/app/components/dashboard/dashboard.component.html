@@ -17,10 +17,10 @@
         <div class="space container1">
             <div class="space2 marg cent-vert">
                 <div>
-                    <span class="text1 cent-vert">Balance General: </span>
+                    <span class="text1 cent-vert">Dinero Ahorrado: </span>
                 </div>
                 <div class="cent-vert">
-                    <span class="cent-vert dinero" id="money">S/ 542.75</span>
+                    <span class="cent-vert dinero" id="money">S/ {{cs}}</span>
                 </div>
                 <div class="cent-vert">
                 <a href="javascript:document.getElementById('money').style.display='none';void0"><img [src]="'assets/icons8-invisible-64.png'" width="30" alt="30"></a>
@@ -96,7 +96,7 @@
         </div> 
 
             <div class="caja">
-                <form class="my-form" (ngSubmit) = "onSubmit()" #lForm="ngForm" [formGroup] = "subForm" novalidate>
+                <form class="my-form" (ngSubmit) = "clickGuardar()" #lForm="ngForm" [formGroup] = "subForm" novalidate>
                     
                 <input class="sign-input" type="currency" placeholder="Moneda"  formControlName="currency">
                 <input class="sign-input" type="currentMoney" placeholder="Dinero Actual"  formControlName="currentMoney">
@@ -104,7 +104,7 @@
                 <input class="sign-input" type="savesPercent" placeholder="Porcentaje A Ahorrar"  formControlName="savesPercent">
 
                 <div class="container-button">
-                    <button type="submit" class="signup-button">GUARDAR</button>
+                    <button type="submit" class="signup-button">{{buttonstr}}</button>
                     <div *ngIf="error"> {{error}} </div>
                     <div *ngIf="msg" > {{msg}} </div>
                 </div>

@@ -9,11 +9,10 @@
 <div class="container2">
     <div class="caja">
         <form class="my-form" (ngSubmit) = "onSavingSheets()" #lForm="ngForm" [formGroup] = "SheetsForm" novalidate>
-        <label for="active">Hoja de ahorros activa:</label>    
+        <label for="active">¿Activar hoja de ahorros?:</label>    
         <input class="input" input type=checkbox checked name=active placeholder="active"  formControlName="active">
-        <input class="input" type="text" placeholder="idSavingPlan"  formControlName="idSavingPlan">
-        <input class="input" type="text" placeholder="savingSheetsName"  formControlName="savingSheetsName">
-        <input class="input" type="number"  placeholder="period"  formControlName="period">
+        <input class="input" type="text" placeholder="Nombre de Hoja de ahorros"  formControlName="savingSheetsName">
+        <input class="input" type="number"  placeholder="Periodo de duracion"  formControlName="period">
         <label for="start">Start date:</label>
         <input class="input" type="date" id="start" name="trip-start"
         value="2018-07-22"
@@ -40,10 +39,12 @@
     </div>
     <div class="caja">
         <form class="my-form" (ngSubmit) = "onCategories()" #lForm="ngForm" [formGroup] = "CategoryForm" novalidate>
-            
-        <input class="input" type="number" placeholder="id"  formControlName="id">
-        <input class="input" type="text" placeholder="categoryName"  formControlName="categoryName">
-        <input class="input" type="number"  placeholder="priority"  formControlName="priority">
+        <label for="idss">id del Saving Sheet al que desea agregar la categoria:</label>
+        <input id= "idss" class="input" type="number" placeholder="id del Saving Sheet"  formControlName="id">
+        <label for="nc">Nombre de la categoria:</label>
+        <input id = "nc" class="input" type="text" placeholder="Nombre de la categoria"  formControlName="categoryName">
+        <label for="pc">Prioridad de la categoria:</label>
+        <input id="pc" class="input" type="number"  placeholder="Prioridad de la categoria"  formControlName="priority">
 
         <div class="container-button">
             <button type="submit" class="signup-button">GUARDAR</button>
@@ -56,7 +57,7 @@
     <div class="caja">
         <form class="my-form" (ngSubmit) = "onCashFlows()" #lForm="ngForm" [formGroup] = "CashFlowForm" novalidate>
             
-        <input class="input" type="number" placeholder="id"  formControlName="id">
+        <input class="input" type="number" placeholder="id de la categoria a la que desea agregar el cashflow"  formControlName="id">
         <input class="input" type="number" placeholder="amount"  formControlName="amount">
         <input class="input" type="text"  placeholder="cashFlowName"  formControlName="cashFlowName">
         <label for="select">Tipo:</label> 

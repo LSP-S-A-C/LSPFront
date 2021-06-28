@@ -1,8 +1,8 @@
 <div class="saving-plan">
-    <form class="text1" (ngSubmit) = "onSubmit()" #lForm="ngForm" [formGroup]="subForm" novalidate>
+    <!--<form class="text1" (ngSubmit) = "onSubmit()" #lForm="ngForm" [formGroup]="subForm" novalidate>
         <label for="select" style="margin-left: 2%;">Ingresa el número de Saving Plan a observar: </label>
         <select id="select" aria-autocomplete="0" class="select text2" type="text" placeholder="Plan ID number" formControlName="PlanID" style="background-color: rgb(255, 219, 164);">
-            <!--<option *ngFor="let nw of savingPlansUserid; let i = index" value=1>{{nw}}</option>-->
+            <option *ngFor="let nw of savingPlansUserid; let i = index" value=1>{{nw}}</option>
             <option value=0>1</option>
             <option value=1>2</option>
             <option value=2>3</option>
@@ -14,7 +14,8 @@
             <option value=8>9</option>
         </select>
         <button type="submit" style="padding-top: 0%;padding-bottom: 0%; font-size: 40%; text-align: center; margin-top: -2px;">BUSCAR</button>
-    </form>
+    </form>-->
+    <div class="text1">Saving Plan Actual:</div>
     <table class="text-center">
         <thead>
             <td><b>Moneda</b></td>
